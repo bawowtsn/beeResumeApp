@@ -1,6 +1,15 @@
 pipeline {
      agent any
      stages {
+        stage("Node") {
+            steps {
+                sh "sudo yum update"
+                sh "curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -"
+                sh "sudo yum update"
+                sh "sudo yum install -y nodejs"
+                sh "sudo npm install -g npm@latest"
+            }
+        }
         stage("Build") {
             steps {
                 sh "sudo npm install"
