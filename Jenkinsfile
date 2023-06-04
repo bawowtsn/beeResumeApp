@@ -23,6 +23,7 @@ pipeline {
                 sh "sudo cd /home/ec2-user"
                 //sh "sudo scp -r -i TDA_key_pair.pem ${WORKSPACE}/build/* ec2-user@ec2-54-152-218-119.compute-1.amazonaws.com:/usr/share/nginx/html"
                 sh "sudo rsync --rsync-path='sudo rsync' -azvv -e 'ssh -i /home/ec2-user/TDA_key_pair.pem' ${WORKSPACE}/build/* ec2-user@ec2-54-152-218-119.compute-1.amazonaws.com:/usr/share/nginx/html"
+                //testing hook cicd
             }
         }
     }
